@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div >
+        <input type="checkbox" name="vehicle" value="1">
+        <span>Bike</span>
+    </div>
+    <div>
+        <input type="checkbox" name="vehicle" value="2">
+        <span>Car</span>
+    </div>
+    <div>
+        <input type="checkbox" name="vehicle" value="3">
+        <span>Train</span>
+    </div>
+    <div>
+        <input type="checkbox" name="vehicle" value="4">
+        <span>Plane</span>
+    </div>
+    <div>
+        <input type="checkbox" name="vehicle" value="5">
+        <span>Ship</span>
+    </div>
+    <div>
+        <input type="checkbox" name="vehicle" value="6" id="check_all">
+        <span>All</span>
+    </div>
+    <button id="submit">Submit</button>
+    <div id="output"></div>
+
+    <script>
+        $('#submit').click(function () {
+            $("input[type='checkbox']:checked").each(function () {
+                var status = $(this).val();
+                $('#output').append("<h3>" + " : " + status + "</h3>");
+            });
+        });
+
+        $('#check_all').change(function () {
+            if ($(this).prop("checked") == true) {
+                $("input[type='checkbox']").each(function () {
+                    $(this).prop("checked", true);
+                });
+            }
+            else {
+                $("input[type='checkbox']").each(function () {
+                    $(this).prop("checked", false);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

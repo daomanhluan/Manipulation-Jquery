@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+        <p>Please select your gender:</p>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other<br>
+
+        <p>Please select your age:</p>
+        <input type="radio" name="age" value="30"> 0 - 30<br>
+        <input type="radio" name="age" value="60"> 31 - 60<br>
+        <input type="radio" name="age" value="100"> 61 - 100<br>
+
+        <button id="submit">Submit</button>
+</body>
+<script>
+    $('#submit').click(function(){
+        $('input[name=gender]:checked').each(function(){
+            var res = $(this).val();
+            console.log(res); 
+        });
+    });
+</script>
+</html>
